@@ -2,7 +2,8 @@
 from django.shortcuts import HttpResponseRedirect
 from django.contrib import auth
 
-def login(request):
+
+def login_view(request):
     username = request.POST['username']
     password = request.POST['password']
     user = auth.authenticate(username=username, password=password)
@@ -13,6 +14,6 @@ def login(request):
         return HttpResponseRedirect("/account/invalid/")
 
 
-def logout(request):
+def logout_out(request):
     auth.logout(request)
     return HttpResponseRedirect("/account/loggedout/")
