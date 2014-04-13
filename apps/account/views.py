@@ -4,7 +4,8 @@ from django.contrib import auth
 from forms import ContactForm
 
 
-def login(request):
+
+def login_view(request):
     username = request.POST['username']
     password = request.POST['password']
     user = auth.authenticate(username=username, password=password)
@@ -15,7 +16,7 @@ def login(request):
         return HttpResponseRedirect("/account/invalid/")
 
 
-def logout(request):
+def logout_out(request):
     auth.logout(request)
     return HttpResponseRedirect("/account/loggedout/")
 
