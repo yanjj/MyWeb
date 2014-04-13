@@ -16,4 +16,5 @@ urlpatterns = patterns('',
     # url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/login/$', 'apps.account.views.login'),
     url(r'^accounts/logout/$', 'apps.account.views.logout'),
+    url(r'^search/$', 'apps.account.views.contact'),
 )
